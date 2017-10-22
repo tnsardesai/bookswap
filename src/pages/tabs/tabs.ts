@@ -12,13 +12,12 @@ import { TasksPage } from '../tasks/tasks';
 export class TabsPage {
 
   tab1Root = TasksPage;
-  tab2Root = ChatPage;
-  tab3Root =SearchPage;
-  tab4Root = OffersPage;
-  tab5Root = SettingsPage;
-  
+  tab2Root = SettingsPage;
 
   constructor() {
+    
+      }
+    }
 
-  }
-}
+  
+

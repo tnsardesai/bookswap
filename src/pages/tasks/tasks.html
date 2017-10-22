@@ -23,7 +23,7 @@
 
     <ion-list>
       <ion-item-sliding *ngFor="let item of items; let idx = index;">
-        <button ion-item>
+        <button text-center ion-item>
           <!-- insert image from S3 bucket here-->
           <!-- insert title of item from dynamodb here-->
           <p>username: {{item.name}} email: {{item.email}}</p>          
