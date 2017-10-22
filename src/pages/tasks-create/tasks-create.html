@@ -36,8 +36,18 @@
       <ion-label>Email</ion-label>
       <ion-textarea rows="1" [(ngModel)]="item.email" name="description" value="{{email}}"></ion-textarea>
     </ion-item>
+    
+    <div padding text-center>
+      <button ion-button clear (click)="selectAvatar()">Upload photo</button>
+  
+      <input #avatar class="avatar-input" type="file" (change)="uploadFromFile($event)" />
+  
+    </div>
+
     <div padding>
       <button block icon-start ion-button color="primary" (click)="done()"><ion-icon name="md-checkmark" showWhen="core,android,windows"></ion-icon>Create task</button>
     </div>
+
+
   </ion-list>
 </ion-content>
