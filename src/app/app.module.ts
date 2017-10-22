@@ -1,3 +1,6 @@
+import { OffersPage } from './../pages/offers/offers';
+import { SearchPage } from './../pages/search/search';
+import { ChatPage } from './../pages/chat/chat';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
@@ -14,10 +17,8 @@ import { AccountPage } from '../pages/account/account';
 import { TabsPage } from '../pages/tabs/tabs';
 import { TasksPage } from '../pages/tasks/tasks';
 import { TasksCreatePage } from '../pages/tasks-create/tasks-create';
-
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-
 import { User } from '../providers/user';
 import { Cognito } from '../providers/aws.cognito';
 import { DynamoDB } from '../providers/aws.dynamodb';
@@ -34,7 +35,10 @@ import { DynamoDB } from '../providers/aws.dynamodb';
     AccountPage,
     TabsPage,
     TasksPage,
-    TasksCreatePage
+    TasksCreatePage,
+    ChatPage,
+    SearchPage,
+    OffersPage
   ],
   imports: [
     BrowserModule,
@@ -51,7 +55,10 @@ import { DynamoDB } from '../providers/aws.dynamodb';
     AccountPage,
     TabsPage,
     TasksPage,
-    TasksCreatePage
+    TasksCreatePage,
+    ChatPage,
+    SearchPage,
+    OffersPage
   ],
   providers: [
     StatusBar,
