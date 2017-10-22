@@ -47,9 +47,14 @@ export class AccountPage {
   }
 
   refreshAvatar() {
-    this.s3.getSignedUrl('getObject', {'Key': 'protected/' + this.sub + '/avatar'}, (err, url) => {
-      this.avatarPhoto = url;
-    });
+      this.s3.getSignedUrl('getObject', {'Key': 'protected/' + this.sub + '/avatar'}, (err, url) => {
+        if (err) {
+          this.s3.getSignedUrl('getObject', {'Key': 'public/default.png'}, (err, url) => {
+            this.avatarPhoto = url;
+          });
+        }
+        this.avatarPhoto = url;
+      });
   }
 
   dataURItoBlob(dataURI) {
