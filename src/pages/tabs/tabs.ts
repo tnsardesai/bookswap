@@ -12,10 +12,10 @@ import { TasksPage } from '../tasks/tasks';
 export class TabsPage {
 
   tab1Root = TasksPage;
-  tab2Root = SettingsPage;
-  tab3Root = ChatPage;
-  tab4Root = SearchPage;
-  tab5Root = OffersPage;
+  tab2Root = ChatPage;
+  tab3Root =SearchPage;
+  tab4Root = OffersPage;
+  tab5Root = SettingsPage;
   
 
   constructor() {
