@@ -6,6 +6,8 @@ import { TasksCreatePage } from '../tasks-create/tasks-create';
 import { DynamoDB, User } from '../../providers/providers';
 
 declare var AWS: any;
+declare const aws_user_files_s3_bucket;
+declare const aws_user_files_s3_bucket_region;
 
 @Component({
   selector: 'page-tasks',
@@ -16,13 +18,31 @@ export class TasksPage {
   public items: any;
   public refresher: any;
   private taskTable: string = 'ionic-mobile-hub-tasks';
-
+  private s3: any;
+  
   constructor(public navCtrl: NavController,
               public modalCtrl: ModalController,
               public user: User,
               public db: DynamoDB) {
-
+    this.s3 = new AWS.S3({
+      'params': {
+        'Bucket': aws_user_files_s3_bucket
+      },
+      'region': aws_user_files_s3_bucket_region
+    });
     this.refreshTasks();
+    //this.refreshPhotos();
+
+  }
+
+  refreshPhotos(){
+    for (var index = 0; index < this.items.length; index++) {
+      var element = this.items[index];
+      this.s3.getSignedUrl('getObject', {'Key': element.photo}, (err, url) => {
+        element.photo = url;
+      });
+      
+    }
   }
 
   refreshData(refresher) {
