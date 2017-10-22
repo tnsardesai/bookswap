@@ -24,7 +24,8 @@
     <ion-list>
       <ion-item-sliding *ngFor="let item of items; let idx = index;">
         <button ion-item>
-          <h2>{{item.category}}</h2>
+          <!-- insert image from S3 bucket here-->
+          <!-- insert title of item from dynamodb here-->
           <p>{{item.description}}</p>
         </button>
 

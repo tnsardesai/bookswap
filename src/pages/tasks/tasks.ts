@@ -31,17 +31,8 @@ export class TasksPage {
   }
 
   refreshTasks() {
-    this.db.getDocumentClient().query({
+    this.db.getDocumentClient().scan({
       'TableName': this.taskTable,
-      'IndexName': 'DateSorted',
-      'KeyConditionExpression': "#userId = :userId",
-      'ExpressionAttributeNames': {
-        '#userId': 'userId',
-      },
-      'ExpressionAttributeValues': {
-        ':userId': AWS.config.credentials.identityId
-      },
-      'ScanIndexForward': false
     }).promise().then((data) => {
       this.items = data.Items;
       if (this.refresher) {

@@ -18,11 +18,8 @@
 <ion-content>
   <ion-list>
     <ion-item>
-      <ion-label>Category</ion-label>
-      <ion-select [(ngModel)]="item.category" name="category">
-        <ion-option value="todo" selected="true">Todo</ion-option>
-        <ion-option value="errand">Errand</ion-option>
-      </ion-select>
+      <ion-label>Title</ion-label>
+      <ion-textarea rows="1" [(ngModel)]="item.title" name="title"></ion-textarea>
     </ion-item>
 
     <ion-item class="custom-item">
