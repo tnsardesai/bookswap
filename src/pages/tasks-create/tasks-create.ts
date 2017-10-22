@@ -22,8 +22,7 @@ export class TasksCreatePage {
               public platform: Platform) {
     this.isAndroid = platform.is('android');
     this.item = {
-      'taskId': navParams.get('id'),
-      'category': 'Todo'
+      'taskId': navParams.get('id')
     };
     this.isReadyToSave = true;
 
@@ -36,6 +35,32 @@ export class TasksCreatePage {
   ionViewDidLoad() {
 
   }
+
+  /*upload() {
+    let loading = this.loadingCtrl.create({
+      content: 'Uploading image...'
+    });
+    loading.present();
+
+    if (this.selectedPhoto) {
+      this.s3.upload({
+        'Key': 'public/'+ this.item('taskId'),
+        'Body': this.selectedPhoto,
+        'ContentType': 'image/jpeg'
+      }).promise().then((data) => {
+        this.refreshAvatar();
+        console.log('upload complete:', data);
+        loading.dismiss();
+      }, err => {
+        console.log('upload failed....', err);
+        loading.dismiss();
+      });
+    }
+    loading.dismiss();
+
+  }
+
+*/
 
   cancel() {
     this.viewCtrl.dismiss();

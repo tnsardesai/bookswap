@@ -83,4 +83,9 @@
     <plugin name="cordova-plugin-device" spec="^1.1.6" />
     <plugin name="cordova-plugin-splashscreen" spec="^4.0.3" />
     <plugin name="cordova-plugin-ionic-webview" spec="^1.1.16" />
+<<<<<<< HEAD
+=======
+    <engine name="android" spec="~6.3.0" />
+    <allow-navigation href="http://10.24.34.206:8100" />
+>>>>>>> b5adbe26a9985a40d6cd2ece1607180ceaea7b06
 </widget>
