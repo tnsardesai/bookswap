@@ -26,7 +26,10 @@
         <button text-center ion-item>
           <!-- insert image from S3 bucket here-->
           <!-- insert title of item from dynamodb here-->
-          <p>username: {{item.name}} email: {{item.email}}</p>          
+          <p>username: {{item.name}} email: {{item.email}}</p>
+          
+          <div class="avatar" [style.background-image]="'url(' + item.photo +')'">
+             </div>
           <h1>{{ item.title }}</h1>
           <p>{{item.description}}</p>
         </button>

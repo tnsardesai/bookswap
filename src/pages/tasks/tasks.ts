@@ -31,19 +31,8 @@ export class TasksPage {
       'region': aws_user_files_s3_bucket_region
     });
     this.refreshTasks();
-    //this.refreshPhotos();
-
   }
 
-  refreshPhotos(){
-    for (var index = 0; index < this.items.length; index++) {
-      var element = this.items[index];
-      this.s3.getSignedUrl('getObject', {'Key': element.photo}, (err, url) => {
-        element.photo = url;
-      });
-      
-    }
-  }
 
   refreshData(refresher) {
     this.refresher = refresher;
@@ -55,6 +44,11 @@ export class TasksPage {
       'TableName': this.taskTable,
     }).promise().then((data) => {
       this.items = data.Items;
+      this.items.forEach(element => {
+        this.s3.getSignedUrl('getObject', {'Key': String(element.photo)}, (err, url) => {
+          element.photo = url;
+        });
+      });
       if (this.refresher) {
         this.refresher.complete();
       }

@@ -27,7 +27,7 @@ export class TasksCreatePage {
   public avatarPhoto: string;
   public selectedPhoto: Blob;
   public sub: string = null;  
-  
+  public server: string = null;
 
   constructor(public navCtrl: NavController,
               public user: User,
@@ -42,7 +42,7 @@ export class TasksCreatePage {
       'taskId': navParams.get('id')
     };
     this.isReadyToSave = true;
-
+    this.server = "https://s3.amazonaws.com/mobilehubproject-userfiles-mobilehub-471683493"
     user.getUser().getUserAttributes((err, data) => {
       this.attributes = data;
       this.email = this.attributes[2].getValue();
@@ -62,6 +62,9 @@ export class TasksCreatePage {
 
   }
 
+  updatePhoto(){
+
+  }
 
   ionViewDidLoad() {
 
@@ -132,7 +135,6 @@ export class TasksCreatePage {
         'Body': this.selectedPhoto,
         'ContentType': 'image/jpeg'
       }).promise().then((data) => {
-        //this.refreshAvatar();
         console.log('upload complete:', data);
         loading.dismiss();
       }, err => {
