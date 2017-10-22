@@ -17,7 +17,7 @@ export class TasksPage {
 
   public items: any;
   public refresher: any;
-  private taskTable: string = 'ionic-mobile-hub-tasks';
+  private taskTable: string = 'ionic-mobile-hub-tasks-bookswap';
   private s3: any;
   
   constructor(public navCtrl: NavController,

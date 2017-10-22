@@ -41,7 +41,7 @@
       <button ion-button clear (click)="selectAvatar()">Upload photo</button>
   
       <input #avatar class="avatar-input" type="file" (change)="uploadFromFile($event)" />
-      <div class="hide-div"><ion-textarea [(ngModel)]="item.photo" value="{{server + avatarPhoto}}"></ion-textarea>      
+      <div class="hide-div"><ion-textarea [(ngModel)]="item.photo" value="{{avatarPhoto}}"></ion-textarea>      
     
       </div>
     </div>
