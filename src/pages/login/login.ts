@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { NavController, LoadingController } from 'ionic-angular';
+import { NavController, LoadingController, AlertController } from 'ionic-angular';
 
 import { TabsPage } from '../tabs/tabs';
 import { SignupPage } from '../signup/signup';
@@ -23,8 +23,26 @@ export class LoginPage {
 
   constructor(public navCtrl: NavController,
               public user: User,
-              public loadingCtrl: LoadingController) {
+              public loadingCtrl: LoadingController,
+              public alertCtrl: AlertController
+            ) {
     this.loginDetails = new LoginDetails(); 
+  }
+    failureAlert(){
+    const alert = this.alertCtrl.create({
+      title:"Login Failure",
+      message:'Username or password is incorrect.',
+      buttons:[
+        {
+          text: 'OK',
+          role: 'cancel',
+          handler:() =>{
+            console.log('Cancel click');
+          }
+        }
+      ]
+    })
+    alert.present();
   }
 
   login() {
@@ -46,8 +64,10 @@ export class LoginPage {
       }
       console.log('errrror', err);
       loading.dismiss();
+      this.failureAlert();
     });
   }
+
 
   signup() {
     this.navCtrl.push(SignupPage);
