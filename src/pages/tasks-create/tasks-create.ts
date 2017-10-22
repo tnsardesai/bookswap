@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, ViewController, Platform } from 'ionic-angular';
+import { Camera, CameraOptions } from '@ionic-native/camera';
+
 
 @Component({
   selector: 'page-tasks-create',
@@ -23,7 +25,12 @@ export class TasksCreatePage {
       'taskId': navParams.get('id')
     };
     this.isReadyToSave = true;
+
+
   }
+  
+
+
 
   ionViewDidLoad() {
 
