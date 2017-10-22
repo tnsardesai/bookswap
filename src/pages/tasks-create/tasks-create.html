@@ -21,20 +21,21 @@
       <ion-label>Title</ion-label>
       <ion-textarea rows="1" [(ngModel)]="item.title" name="title"></ion-textarea>
     </ion-item>
-    <ion-item>
-      <ion-label>
-        Listing Title
-      </ion-label>
-      <ion-textarea rows="1" [(ngModel)]="item.title" name="title"></ion-textarea>
-    </ion-item>
-
-    
 
     <ion-item class="custom-item">
       <ion-label>Item Description</ion-label>
       <ion-textarea rows="5" [(ngModel)]="item.description" name="description"></ion-textarea>
     </ion-item>
 
+    <ion-item class="custom-item">
+      <ion-label>Name</ion-label>
+      <ion-textarea rows="1" [(ngModel)]="item.name" name="description" value="{{ username }}"></ion-textarea>
+    </ion-item>
+
+    <ion-item class="custom-item">
+      <ion-label>Email</ion-label>
+      <ion-textarea rows="1" [(ngModel)]="item.email" name="description" value="{{email}}"></ion-textarea>
+    </ion-item>
     <div padding>
       <button block icon-start ion-button color="primary" (click)="done()"><ion-icon name="md-checkmark" showWhen="core,android,windows"></ion-icon>Create task</button>
     </div>
