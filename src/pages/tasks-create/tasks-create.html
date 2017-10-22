@@ -24,9 +24,17 @@
         <ion-option value="errand">Errand</ion-option>
       </ion-select>
     </ion-item>
+    <ion-item>
+      <ion-label>
+        Listing Title
+      </ion-label>
+      <ion-textarea rows="1" [(ngModel)]="item.title" name="title"></ion-textarea>
+    </ion-item>
+
+    
 
     <ion-item class="custom-item">
-      <ion-label>Task Description</ion-label>
+      <ion-label>Item Description</ion-label>
       <ion-textarea rows="5" [(ngModel)]="item.description" name="description"></ion-textarea>
     </ion-item>
 
