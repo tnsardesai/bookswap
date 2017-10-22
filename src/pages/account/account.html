@@ -22,9 +22,9 @@
       <ion-item>
         <strong>username</strong> {{ user.getUser().getUsername() }}
       </ion-item>
-      <ion-item *ngFor="let attr of attributes">
-        <strong>{{ attr.getName() }}</strong> {{ attr.getValue() }}
-      </ion-item>
+      <ion-item *ngIf="attributes[2]">
+          <strong>{{ attributes[2].getName() }}</strong> {{ attributes[2].getValue() }}
+        </ion-item>
     </ion-list>
   </div>
 
