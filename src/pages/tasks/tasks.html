@@ -26,10 +26,9 @@
         <button ion-item>
           <!-- insert image from S3 bucket here-->
           <!-- insert title of item from dynamodb here-->
+          <p>username: {{item.name}} email: {{item.email}}</p>          
           <h1>{{ item.title }}</h1>
           <p>{{item.description}}</p>
-          <p>{{item.name}}</p>
-          <p>{{item.email}}</p>
         </button>
 
         <ion-item-options>
